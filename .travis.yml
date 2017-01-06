@@ -9,3 +9,4 @@ script:
   - npm test
   - npm run eslint
   - npm run build
+after_success: "yarn run coveralls"
