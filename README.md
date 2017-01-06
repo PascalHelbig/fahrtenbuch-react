@@ -1,4 +1,6 @@
 [![Build Status](https://travis-ci.org/PascalHelbig/fahrtenbuch-react.svg?branch=master)](https://travis-ci.org/PascalHelbig/fahrtenbuch-react)
+[![Coverage Status](https://coveralls.io/repos/github/PascalHelbig/fahrtenbuch-react/badge.svg?branch=master)](https://coveralls.io/github/PascalHelbig/fahrtenbuch-react?branch=master)
+[![dependencies Status](https://david-dm.org/Pascalhelbig/fahrtenbuch-react/status.svg)](https://david-dm.org/Pascalhelbig/fahrtenbuch-react)
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
