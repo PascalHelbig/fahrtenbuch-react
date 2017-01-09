@@ -1,19 +1,6 @@
 import React from 'react';
-import RaisedButton from 'material-ui/RaisedButton';
-import logo from './logo.svg';
-import './App.css';
+import AppBar from 'material-ui/AppBar';
 
-const App = () => (
-  <div className="App">
-    <div className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <h2>Welcome to React</h2>
-    </div>
-    <p className="App-intro">
-      To get started, edit <code>src/App.js</code> and save to reload.
-    </p>
-    <RaisedButton label="Hello" primary />
-  </div>
+export default () => (
+  <AppBar title="Fahrtenbuch" />
 );
-
-export default App;
