@@ -1,5 +1,15 @@
 exports[`test renders correctly 1`] = `
-<Header>
-  Login
-</Header>
+<div>
+  <Header>
+    Login
+  </Header>
+  <RaisedButton
+    disabled={false}
+    fullWidth={false}
+    label="login"
+    labelPosition="after"
+    onTouchTap={[Function]}
+    primary={true}
+    secondary={false} />
+</div>
 `;
