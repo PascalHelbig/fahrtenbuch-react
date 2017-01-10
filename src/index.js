@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import 'material-design-lite/src/typography/_typography.scss';
 import Routes from './Routes/Routes';
 import './index.css';
 
