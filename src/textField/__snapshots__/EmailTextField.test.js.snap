@@ -1,0 +1,12 @@
+exports[`test renders correctly 1`] = `
+<FormsyText
+  floatingLabelText="Email Adresse"
+  fullWidth={true}
+  name="email"
+  required={true}
+  type="email"
+  updateImmediately={true}
+  validationError="Das ist keine Email Adresse"
+  validationErrors={Object {}}
+  validations="isEmail" />
+`;
