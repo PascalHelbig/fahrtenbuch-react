@@ -18,7 +18,7 @@ exports[`test renders correctly 1`] = `
     <Component />
   </Formsy>
   <RaisedButton
-    disabled={false}
+    disabled={true}
     fullWidth={false}
     label="login"
     labelPosition="after"
