@@ -1,5 +1,29 @@
 exports[`test renders correctly 1`] = `
-<Header>
-  Sign up
-</Header>
+<div>
+  <Header>
+    Sign up
+  </Header>
+  <Formsy
+    onChange={[Function]}
+    onError={[Function]}
+    onInvalid={[Function]}
+    onInvalidSubmit={[Function]}
+    onSubmit={[Function]}
+    onSuccess={[Function]}
+    onValid={[Function]}
+    onValidSubmit={[Function]}
+    preventExternalInvalidation={false}
+    validationErrors={null}>
+    <Component />
+    <Component />
+  </Formsy>
+  <RaisedButton
+    disabled={true}
+    fullWidth={false}
+    label="Registrieren"
+    labelPosition="after"
+    onTouchTap={[Function]}
+    primary={true}
+    secondary={false} />
+</div>
 `;

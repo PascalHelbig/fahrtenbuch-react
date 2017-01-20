@@ -2,7 +2,7 @@ import React from 'react';
 import { Router, Route, browserHistory } from 'react-router';
 import App from '../App';
 import Login from '../auth/Login';
-import Signup from '../auth/Signup/Signup';
+import Signup from '../auth/Signup';
 
 export default () =>
   <Router history={browserHistory}>
