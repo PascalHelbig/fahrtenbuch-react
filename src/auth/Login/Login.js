@@ -1,50 +1,34 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 import RaisedButton from 'material-ui/RaisedButton/RaisedButton';
-import Formsy from 'formsy-react';
-import EmailTextField from '../../textField/EmailTextField';
-import PasswordTextField from '../../textField/PasswordTextField';
+import Form from '../../Form/Form';
+import EmailTextField from '../../Form/textField/EmailTextField';
+import PasswordTextField from '../../Form/textField/PasswordTextField';
 import Header from '../../Header/Header';
 
-class Login extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      values: {},
-      isValid: false,
-    };
-
-    this.handleChange = this.handleChange.bind(this);
-  }
-
-  handleChange(values) {
-    this.setState({ values });
-  }
-
-  render() {
-    return (
-      <div>
-        <Header>Login</Header>
-        <Formsy.Form
-          onChange={this.handleChange}
-          onValid={() => this.setState({ isValid: true })}
-          onInvalid={() => this.setState({ isValid: false })}
-        >
+const Login = props => (
+  <div>
+    <Header>Login</Header>
+    <Form>
+      {({ email, password }, isValid) => (
+        <div>
           <EmailTextField />
           <PasswordTextField />
-        </Formsy.Form>
-        <RaisedButton
-          label="login"
-          onTouchTap={() => this.props.onLogin('test@test.de', '12345')}
-          disabled={!this.state.isValid}
-          primary
-        />
-      </div>
-    );
-  }
-}
+          <RaisedButton
+            label="login"
+            onTouchTap={() => props.onLogin(email, password)}
+            disabled={!isValid}
+            primary
+          />
+        </div>
+      )}
+    </Form>
+  </div>
+);
 
+/* eslint-disable react/no-unused-prop-types */
 Login.propTypes = {
   onLogin: PropTypes.func.isRequired,
 };
+/* eslint-enable react/no-unused-prop-types */
 
 export default Login;

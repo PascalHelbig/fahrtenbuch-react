@@ -3,27 +3,6 @@ exports[`test renders correctly 1`] = `
   <Header>
     Login
   </Header>
-  <Formsy
-    onChange={[Function]}
-    onError={[Function]}
-    onInvalid={[Function]}
-    onInvalidSubmit={[Function]}
-    onSubmit={[Function]}
-    onSuccess={[Function]}
-    onValid={[Function]}
-    onValidSubmit={[Function]}
-    preventExternalInvalidation={false}
-    validationErrors={null}>
-    <Component />
-    <Component />
-  </Formsy>
-  <RaisedButton
-    disabled={true}
-    fullWidth={false}
-    label="login"
-    labelPosition="after"
-    onTouchTap={[Function]}
-    primary={true}
-    secondary={false} />
+  <Form />
 </div>
 `;
