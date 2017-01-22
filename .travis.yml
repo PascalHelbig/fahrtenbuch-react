@@ -13,3 +13,4 @@ after_success:
   # https://gist.github.com/maxrimue/16e272c4e0b8a8ac9dd5570e180e08c0
   - bash yarn.sh
   - yarn run coveralls
+  - yarn run deploy
