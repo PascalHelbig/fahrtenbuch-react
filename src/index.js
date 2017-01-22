@@ -6,7 +6,7 @@ import ApolloClient, { createNetworkInterface } from 'apollo-client';
 import { ApolloProvider } from 'react-apollo';
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import userReducer from './User/reducer';
-import Routes from './Routes/Routes';
+import Routes from './Routes';
 import './index.css';
 
 // Needed for onTouchTap

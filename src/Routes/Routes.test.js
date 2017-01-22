@@ -1,6 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import { shallow } from 'enzyme';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import Routes from './Routes';
 
@@ -9,11 +8,23 @@ import Routes from './Routes';
 injectTapEventPlugin();
 
 it('renders without crashing', () => {
-  const div = document.createElement('div');
-  // Wrapp into MuiThemeProvider, because App needs the theme context
-  ReactDOM.render(
-    <MuiThemeProvider>
-      <Routes />
-    </MuiThemeProvider>,
-    div);
+  shallow(<Routes isAuth />);
+});
+
+it('redirects when auth is true and unauth required to "/"', () => {
+  const wrapper = shallow(<Routes isAuth />).instance();
+
+  const redirect = jest.fn();
+  wrapper.requiredUnauth(undefined, redirect);
+
+  expect(redirect).toHaveBeenCalledWith('/');
+});
+
+it('redirects when auth is false and auth required to "/login"', () => {
+  const wrapper = shallow(<Routes isAuth={false} />).instance();
+
+  const redirect = jest.fn();
+  wrapper.requiredAuth(undefined, redirect);
+
+  expect(redirect).toHaveBeenCalledWith('/login');
 });
