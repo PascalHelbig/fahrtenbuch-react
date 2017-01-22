@@ -14,17 +14,23 @@ it('renders without crashing', () => {
 it('redirects when auth is true and unauth required to "/"', () => {
   const wrapper = shallow(<Routes isAuth />).instance();
 
-  const redirect = jest.fn();
-  wrapper.requiredUnauth(undefined, redirect);
+  const shouldRedirect = jest.fn();
+  const notRedirect = jest.fn();
+  wrapper.requiredAuth(undefined, notRedirect);
+  wrapper.requiredUnauth(undefined, shouldRedirect);
 
-  expect(redirect).toHaveBeenCalledWith('/');
+  expect(shouldRedirect).toHaveBeenCalledWith('/');
+  expect(notRedirect).toHaveBeenCalledTimes(0);
 });
 
 it('redirects when auth is false and auth required to "/login"', () => {
   const wrapper = shallow(<Routes isAuth={false} />).instance();
 
-  const redirect = jest.fn();
-  wrapper.requiredAuth(undefined, redirect);
+  const shouldRedirect = jest.fn();
+  const notRedirect = jest.fn();
+  wrapper.requiredAuth(undefined, shouldRedirect);
+  wrapper.requiredUnauth(undefined, notRedirect);
 
-  expect(redirect).toHaveBeenCalledWith('/login');
+  expect(shouldRedirect).toHaveBeenCalledWith('/login');
+  expect(notRedirect).toHaveBeenCalledTimes(0);
 });
