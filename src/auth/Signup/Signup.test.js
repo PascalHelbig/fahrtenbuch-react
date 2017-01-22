@@ -17,4 +17,4 @@ it('runs signup on button touchTap', () => {
   form.find(RaisedButton).simulate('touchTap');
 
   expect(onSignup).toHaveBeenCalled();
-})
+});
