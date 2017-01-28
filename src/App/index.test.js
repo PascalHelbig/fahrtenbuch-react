@@ -13,13 +13,12 @@ import LoginButton from './LoginButton';
 injectTapEventPlugin();
 
 it('renders without crashing', () => {
-  const div = document.createElement('div');
   // Wrapp into MuiThemeProvider, because App needs the theme context
-  ReactDOM.render(
+  shallow(
     <MuiThemeProvider>
       <AppDump router={{ push: () => {} }} isAuth />
     </MuiThemeProvider>,
-    div);
+  );
 });
 
 const getAction = (app) => {

@@ -1,14 +1,24 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import FlatButton from 'material-ui/FlatButton';
+import { connect } from 'react-redux';
+import { logout as logoutAction } from '../User/actions';
 
-// Todo: add onTouchTap logic
-const LogoutButton = props => (
+export const LogoutButtonDump = ({ logout, ...restProps }) => (
   <FlatButton
     label="logout"
-    {...props}
+    onTouchTap={() => logout()}
+    {...restProps}
   />
 );
 
-LogoutButton.muiName = FlatButton.muiName;
+LogoutButtonDump.propTypes = {
+  logout: PropTypes.func.isRequired,
+};
 
-export default LogoutButton;
+LogoutButtonDump.muiName = FlatButton.muiName;
+
+export const mapDispatchToProps = dispatch => ({
+  logout: () => dispatch(logoutAction()),
+});
+
+export default connect(null, mapDispatchToProps)(LogoutButtonDump);
