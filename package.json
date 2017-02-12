@@ -15,7 +15,7 @@
     "react-scripts": "0.8.5"
   },
   "dependencies": {
-    "apollo-client": "^0.7.3",
+    "apollo-client": "^0.8.5",
     "formsy-material-ui": "^0.5.3",
     "formsy-react": "^0.19.1",
     "graphql-tag": "^1.2.3",
